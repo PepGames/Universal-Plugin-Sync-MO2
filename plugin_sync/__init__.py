@@ -24,14 +24,17 @@ class PluginSync(mobase.IPluginTool):
     def __init__(self):
         super().__init__()
 
-    def init(self, organizer: mobase.IOrganizer, pluginGame: mobase.IPluginGame):
+    def init(self, organizer: mobase.IOrganizer):
         self._organizer = organizer
-        self._pluginGame = pluginGame
         self._modList = organizer.modList()
         self._pluginList = organizer.pluginList()
+        return True
+    
+    def init(self, pluginGame: mobase.IPluginGame):
+        self._pluginGame = pluginGame
         self._gameName = pluginGame.gameName()
         return True
-
+    
     def name(self):
         return "Sync Plugins (Universal)"
 
