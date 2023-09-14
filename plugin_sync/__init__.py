@@ -30,10 +30,10 @@ class PluginSync(mobase.IPluginTool):
         self._pluginList = organizer.pluginList()
         return True
     
-    def init(self, pluginGame: mobase.IPluginGame):
-        self._pluginGame = pluginGame
-        self._gameName = pluginGame.gameName()
-        return True
+   # def init(self, pluginGame: mobase.IPluginGame):
+   #     self._pluginGame = pluginGame
+  #      self._gameName = pluginGame.gameName()
+   #     return True
     
     def name(self):
         return "Sync Plugins (Universal)"
